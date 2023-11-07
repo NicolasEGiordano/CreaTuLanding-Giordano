@@ -1,0 +1,30 @@
+.catalog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+  }
+  
+  .product-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .product-card p {
+    font-size: 14px;
+  }
+  
+  .product-card a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .product-card a:hover {
+    text-decoration: underline;
+  }

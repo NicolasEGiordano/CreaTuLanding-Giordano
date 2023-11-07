@@ -1,14 +1,30 @@
-import React from 'react';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Catalog from './components/Catalog';
+import ProductDetailPage from './components/ProductDetailPage';  
+import Cart from './components/Cart';  
+import products from './data';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <NavBar/>
-      <ItemListContainer message="¡Ups! Aquí no hay nada aún" />
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<Catalog  products={products} />}
+        />
+        <Route
+          path="/product/:productId"
+          element={<ProductDetailPage products={products} />}
+        />
+        <Route
+          path="/cart"
+          element={<Cart></Cart>}
+        />  
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
